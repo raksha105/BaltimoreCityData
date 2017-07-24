@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.baltimore.city.pojo.Restaurant" table="Restaurant">
+		<meta attribute="class-description">
+		</meta>
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name" type="string" />
+		<property name="zipcode" column="zipcode" type="string" />
+		<property name="neighborhood" column="neighborhood" type="string" />
+		<property name="councildistrict" column="councildistrict"
+			type="string" />
+		<property name="policedistrict" column="policedistrict" type="string" />
+		<property name="location_1_city" column="location_1_city"
+			type="string" />
+		<property name="location_1_state" column="location_1_state"
+			type="string" />
+			<property name="location_1_address" column="location_1_address"
+			type="string" />
+
+
+
+
+
+	</class>
+</hibernate-mapping>

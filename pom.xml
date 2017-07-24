@@ -1,0 +1,255 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.baltimore.city</groupId>
+	<artifactId>BaltimoreCityData</artifactId>
+	<packaging>war</packaging>
+	<version>1</version>
+	<name>Data Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<spring.version>4.0.1.RELEASE</spring.version>
+		<jackson.version>1.9.12</jackson.version>
+
+
+	</properties>
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.10.Final</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+	
+
+	<!-- 	<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency> -->
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.2.8</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		<dependency>
+
+			<groupId>org.webjars</groupId>
+
+			<artifactId>angularjs</artifactId>
+
+			<version>1.6.4</version>
+
+			<scope>runtime</scope>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>org.webjars</groupId>
+
+			<artifactId>bootstrap</artifactId>
+
+			<version>3.3.6</version>
+
+			<scope>runtime</scope>
+
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+	</dependencies>
+	<build>
+	    <pluginManagement>
+	
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<fork>true</fork>
+					<executable>${JAVA_1_8_HOME}/bin/javac</executable>
+				</configuration>
+			</plugin>
+
+		   <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <port>8080</port>
+          <path>/BaltimoreCityData</path>
+        </configuration>
+      </plugin>
+
+ <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>dbunit-maven-plugin</artifactId>
+        <version>1.0-beta-3</version>
+        
+        <!--jar file that has the jdbc driver -->
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+          </dependency>
+        </dependencies>
+        
+        <!-- common configurations -->
+        <configuration>
+          <driver>com.mysql.jdbc.Driver</driver>
+          <url>com.mysql.jdbc.Driver</url>
+          <username>root</username>
+          <password>baltimoredb</password>
+         
+        </configuration>
+        
+        <executions>
+          <execution>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>operation</goal>
+            </goals>
+            <!-- specific configurations -->
+            <configuration>
+              <type>CLEAN_INSERT</type>
+                  <encoding>utf-8</encoding>
+              
+                <src>target/Restaurants.xml</src>
+            </configuration>
+          </execution>
+        </executions>
+        
+      </plugin>
+
+
+		</plugins>
+</pluginManagement>
+
+
+		<resources>
+			<resource>
+				<directory>src/main/java/*</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+
+			<resource>
+				<directory>src/test/java/*</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
+				<filtering>true</filtering>
+			</resource>
+
+		</resources>
+	</build>
+
+
+</project>
