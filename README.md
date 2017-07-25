@@ -27,10 +27,9 @@ What things you need to install the software and how to install them
 1. IDE - Preferrably Eclipse IDE
 
 2. Jdk-1.8 configured in the IDE - Or Configure the jdk version that you have in settings.xml file of your .m2 in maven
-   -> I have included the sample settings.xml that I have used
-   Change the JAVA_1_8_HOME path to your jdk path
-   -> Update the path to your jdk in settings.xml file once you build the project through Maven Build.
-   ->settings.xml will be located in your maven .m2 folder. If not create a settings.xml and use the configuration I have provided.
+   -> I have included the sample settings.xml file
+   -> Change the JAVA_1_8_HOME path with your jdk path in settings.xml in your .m2 folder
+   ->settings.xml will be located in your maven .m2 folder. If not create a settings.xml in .m2 folder
    
 3. Server - type the command "tomcat7:run" if using IDE or "mvn tomcat7:run" if using command line
 
