@@ -22,26 +22,27 @@ You can do the following through the User Interface:
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-1. IDE - Preferrably Eclipse IDE
-2. Jdk-1.8 configured in the IDE - Or Configure the jdk version that you have in settings.xml file 0f your .m2 in maven
-3. Server - Apache Tomcat v7.0 configured to run the project in your IDE
 
 ### Installing
 
 Download the zip or clone the project
 1. Import the project as existing Maven Project in your IDE
 2. Update Maven project, so that all dependencies are up to data
-3. Run maven clean install
-4. Build project with maven build
-5. Configure the build path according your Jdk version
+3. Clean the project
+4. Run maven - "clean install"
+5. Build project with maven build
+6.Run the command "tomcat7:run" with maven
+This will start the server
+7. Copy the URL that is shown when the server starts up and run it on your browser
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+1. IDE - Preferrably Eclipse IDE
+2. Jdk-1.8 configured in the IDE - Or Configure the jdk version that you have in settings.xml file 0f your .m2 in maven
+ Configure the build path according your Jdk version
    -> Update the path to your jdk in settings.xml file once you build the project through Maven Build.
    ->settings.xml will be located in your maven .m2 folder
-6. Clean the project
-7. Run on Server
-8. Copy the URL and run it on your browser
-
+3. Server - type the command "tomcat7:run" if using IDE or "mvn tomcat7:run" if using command line
 
 
