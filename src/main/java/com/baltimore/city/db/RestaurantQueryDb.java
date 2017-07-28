@@ -46,7 +46,7 @@ public class RestaurantQueryDb {
 
 		try {
 
-			file = new File("/usr/share/tomcat8/webapps/checkfile.txt");
+			file = new File("datafiles/data.xml");
 
 			file.getParentFile().mkdirs();
 			file.createNewFile();
@@ -71,14 +71,13 @@ public class RestaurantQueryDb {
 		String fname_path = "";
 		fname_path = file.getAbsolutePath();
 
-		String load_xml = "LOAD XML LOCAL INFILE '" + "/usr/share/tomcat8/webapps/checkfile.txt"
+		String load_xml = "LOAD XML LOCAL INFILE '" + "datafiles/data.xml"
 				+ "' INTO TABLE Restaurant(name,zipcode,neighborhood,councildistrict,policedistrict,location_1_city,"
 				+ "location_1_state,location_1_address); ";
 
 		// System.out.println(load_xml);
 
-		String insertTableSQL = " LOAD DATA  LOCAL INFILE " + "C:/Restaurants.xml" + "' INTO TABLE Restaurant "
-				+ " FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"'" + " LINES TERMINATED BY \'\\n\'";
+
 		Query query = session.createSQLQuery(load_xml);
 
 		try {
