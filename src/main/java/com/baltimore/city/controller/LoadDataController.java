@@ -28,9 +28,11 @@ public class LoadDataController {
 	HibernateUtil hutil = new HibernateUtil();
 	SessionFactory sf;
 
-	@RequestMapping(value = "/index", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+/*	@RequestMapping(value = "/index", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 
-	public @ResponseBody int load(ModelMap model) {
+	public @ResponseBody ModelAndView load(ModelAndView model) {
+		
+
 
 		sf = hutil.getSessionFactory();
 
@@ -38,20 +40,40 @@ public class LoadDataController {
 
 		boolean check = rqdb.LoadDataAPI();
 		if (check) {
+			model.setViewName("redirect:/BaltimoreCityData");
 
-			return 1;
+
+			return model;
 		}
 
 		else {
+			model.setViewName("redirect:/BaltimoreCityData");
 
-			return 0;
+			return model;
 		}
 
-	}
+	}*/
 
 	@RequestMapping(value = "/Datasetloaded", method = RequestMethod.GET)
 
 	public String Datasetloaded(ModelMap model) {
+
+		return "Datasetloaded";
+
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+
+	public String home(ModelMap model) {
+
+		return "Datasetloaded";
+
+	}
+	
+	
+	@RequestMapping(value = "/BaltimoreCityData", method = RequestMethod.GET)
+
+	public String homepage(ModelMap model) {
 
 		return "Datasetloaded";
 
@@ -110,7 +132,7 @@ public class LoadDataController {
 		RestaurantDao restdao = new RestaurantDaoImpl();
 		boolean addSuccess = restdao.addRestaurant(restaurant);
 
-		model.setViewName("redirect:/Datasetloaded");
+		model.setViewName("redirect:/BaltimoreCityData/Datasetloaded");
 
 		if (addSuccess) {
 			redir.addFlashAttribute("success", "Added successfully");
