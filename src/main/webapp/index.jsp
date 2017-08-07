@@ -44,6 +44,8 @@ body { padding-top: 70px; }
 <script type="text/javascript">
     
       $(document).ready(function() {
+    	  
+
 
     		var s = document.getElementById('search')
 
