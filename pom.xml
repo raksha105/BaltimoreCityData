@@ -159,6 +159,7 @@
 
 	</dependencies>
 	<build>
+	
 	    <pluginManagement>
 	
 
@@ -180,7 +181,7 @@
         <version>2.2</version>
         <configuration>
           <port>8080</port>
-          <path>/BaltimoreCityData</path>
+          <path>/</path>
         </configuration>
       </plugin>
 
