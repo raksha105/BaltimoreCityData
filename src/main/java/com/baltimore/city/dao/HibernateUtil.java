@@ -9,9 +9,9 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-	public static SessionFactory factory;
+	private static SessionFactory factory;
 
-	public HibernateUtil() {
+	private HibernateUtil() {
 	}
 
 	// Creating Singleton instance of factory object
